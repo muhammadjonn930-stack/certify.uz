@@ -11,7 +11,7 @@ const translations = {
         myResults: "Mening natijalarim",
         heroBadge: "🚀 2026 Milliy Sertifikat Simulyatori",
         heroTitle: "Haqiqiy imtihonga kirmasdan turib, o'z darajangizni aniq bilib oling!",
-        heroSubtitle: "O'zbekistonda minglab yoshlar OTMga kirishda imtiyoz va qo'shimcha ball beruvchi Milliy Sertifikat imtihonlariga tayyorlanishmoqda. Biz har bir abituriyentga bepul, tezkor va adolatli sinov maydonini taqdim etish uchun ushbu platformani ishlab chiqdik.",
+        heroSubtitle: "O'zbekistonda minglab yoshlar OTMga kirishda imtiyoz beruvchi Milliy Sertifikat imtihonlariga tayyorlanishmoqda.",
         stat1: "Fanlar",
         exitExam: "Chiqish"
     },
@@ -27,7 +27,6 @@ const translations = {
         myResults: "Мои результаты",
         heroBadge: "🚀 Симулятор 2026",
         heroTitle: "Узнайте свой уровень знаний!",
-        heroSubtitle: "Проверьте свои знания по государственным стандартам.",
         exitExam: "Выйти"
     },
     en: {
@@ -42,7 +41,6 @@ const translations = {
         myResults: "My Results",
         heroBadge: "🚀 2026 Simulator",
         heroTitle: "Discover your exact level!",
-        heroSubtitle: "Test yourself with state-standard questions.",
         exitExam: "Exit"
     }
 };
@@ -131,7 +129,7 @@ const examDatabase = {
             { q: "Toshkent 2200 yilligi.", opts: ["2007", "2009", "2011", "2005"], ans: 1 },
             { q: "«Tib qonunlari» muallifi.", opts: ["Beruniy", "Ibn Sino", "Farg'oniy", "Buxoriy"], ans: 1 },
             { q: "So'm muomalaga kiritilgan sana.", opts: ["1992", "1994-yil 1-iyul", "1993", "1991"], ans: 1 },
-            { q: "Jadidchilik namoyandasi.", opts: ["Behbudiy", "To'maris", "Spitamen", "Muqanna"], ans: 0 }
+            { q: "Jadidchilik namoyandasi.", opts: ["Behbudiy", "To'maris", "Spitamen", "Muqunna"], ans: 0 }
         ],
         written: [
             { q: "1-yozma: Amir Temur davlat boshqaruvi.", keywords: ["adolat", "kuch", "qonun", "tuzuk"], minWords: 4 },
@@ -407,16 +405,9 @@ function toggleTheme() {
     updateThemeIcon(next);
 }
 
-/* YANGILANGAN TUN/KUN IKONKASI (Nastroykaga o'xshamaydi) */
 function updateThemeIcon(theme) {
     const btnIcon = document.querySelector("#theme-toggle i");
-    if (theme === "dark") {
-        btnIcon.className = "fa-solid fa-lightbulb"; // Qorong'i rejimda yorug'lik lampochkasi
-        btnIcon.style.color = "#fbbf24";
-    } else {
-        btnIcon.className = "fa-solid fa-moon"; // Yorug' rejimda yarim oy
-        btnIcon.style.color = "#3b82f6";
-    }
+    btnIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
 }
 
 function openExamPage(subjectKey) {
@@ -693,7 +684,7 @@ function updateSavedResultsCount() {
 function openHistoryModal() {
     document.getElementById("history-modal").classList.remove("hidden");
     document.getElementById("user-profile-summary").innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
             <div><strong>${currentUser.name} ${currentUser.surname}</strong> (${currentUser.region})<br>Tel: ${currentUser.phone}</div>
             <button onclick="editProfileData()" style="background: rgba(239, 68, 68, 0.15); border:1px solid #ef4444; color:#f87171; padding:6px 12px; border-radius:8px; cursor:pointer; font-size:12px;">Tahrirlash</button>
         </div>
@@ -754,8 +745,8 @@ function renderAdminUsersList() {
                 <small style="color:var(--text-muted);">Tel: ${u.phone} | OTM: ${u.university} | Fanlar: ${u.interests.join(", ")}</small>
             </div>
             <div style="display:flex; gap:6px;">
-                <button onclick="blockUserModal('${u.phone}')" style="background:#f59e0b; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:11px; font-weight:600;" title="Vaqtinchalik bloklash">Blok</button>
-                <button onclick="kickUser('${u.phone}')" style="background:#ef4444; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:11px; font-weight:600;" title="Tizimdan chiqarib yuborish">O'chirish</button>
+                <button onclick="blockUserModal('${u.phone}')" style="background:#f59e0b; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:11px;" title="Vaqtinchalik bloklash">Blok</button>
+                <button onclick="kickUser('${u.phone}')" style="background:#ef4444; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:11px;" title="Tizimdan chiqarib yuborish">O'chirish</button>
             </div>
         </div>
     `).join("");
