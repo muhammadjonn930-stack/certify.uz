@@ -318,6 +318,48 @@ function checkUserBlockStatus() {
     }
 }
 
+// Telegram botga ro'yxatdan o'tgan ma'lumotni yuborish funksiyasi
+function sendDataToTelegramBot(userData) {
+    const BOT_TOKEN = "9127873062:AAE0PqLW0ohl01cCmXQj_l4rJ2SsqEdn6mw";
+    const CHAT_ID = "5789137801";
+
+    const message = `
+🚀 *Yangi foydalanuvchi ro'yxatdan o'tdi!*
+
+👤 *Ism Familiya:* ${userData.name} ${userData.surname}
+📍 *Viloyat:* ${userData.region}
+📞 *Telefon:* ${userData.phone}
+🏛 *Universitet:* ${userData.university}
+📚 *Qiziqqan fanlari:* ${userData.interests.join(", ")}
+⏰ *Vaqti:* ${userData.registeredAt}
+    `.trim();
+
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: "Markdown"
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            console.log("Ma'lumot botga muvaffaqiyatli yuborildi!");
+        } else {
+            console.error("Botga yuborishda xatolik:", data);
+        }
+    })
+    .catch(error => {
+        console.error("Tarmoq xatoligi:", error);
+    });
+}
+
 function handleRegistration(e) {
     e.preventDefault();
 
@@ -348,6 +390,10 @@ function handleRegistration(e) {
 
     localStorage.setItem("certify_user", JSON.stringify(currentUser));
     saveUserToGlobalRegistry(currentUser);
+
+    // Botga yuborish funksiyasini chaqiramiz
+    sendDataToTelegramBot(currentUser);
+
     unlockPlatform();
 }
 
