@@ -203,3 +203,78 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
 
 .admin-user-row { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid var(--glass-border); gap: 10px; font-size: 13px; }
 .admin-user-row:last-child { border-bottom: none; }
+
+
+/* --- MOBIL QURILMALAR UCHUN MOSLASHUV (RESPONSIVE) --- */
+
+@media screen and (max-width: 900px) {
+    .home-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .glass-header {
+        padding: 10px 16px;
+    }
+
+    .header-spacer {
+        display: none;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .reg-container {
+        padding: 20px 16px;
+        margin: 10px;
+    }
+
+    .exam-top-bar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        text-align: center;
+        padding: 14px;
+    }
+
+    .exam-subject-badge {
+        justify-content: center;
+    }
+
+    .timer-box {
+        justify-content: center;
+    }
+
+    .score-showcase {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .modal-content {
+        max-width: 100% !important;
+        margin: 10px;
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-banner h1 {
+        font-size: 22px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .question-card h3 {
+        font-size: 16px;
+    }
+
+    .option-item {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
