@@ -70,11 +70,11 @@ const examDatabase = {
             { q: "«Mehrobdan chayon» asarining bosh qahramoni kim?", opts: ["Anvar", "Otabek", "Yo'lchi", "Sultonali"], ans: 0 }
         ],
         written: [
-            { q: "1-yozma savol: «Ona tilim — jonu dilim» mavzusida qisqa xulosa yozing.", keywords: ["til", "millat", "meros", "qadriyat", "kelajak"], minWords: 5 },
-            { q: "2-yozma savol: «Kitob — bilim bulog'i» maqolini izohlang.", keywords: ["kitob", "bilim", "o'qish", "tafakkur"], minWords: 4 },
-            { q: "3-yozma savol: Abdulla Qodiriyning adabiyotdagi xizmati.", keywords: ["roman", "o'tkan kunlar", "asoschi"], minWords: 3 },
-            { q: "4-yozma savol: Sifat so'z turkumiga ta'rif yozing.", keywords: ["belgi", "predmet", "qanday"], minWords: 3 },
-            { q: "5-yozma savol: Imlo xatosini to'g'rilang: «Bugun maktabda tadbr bolib otdi».", keywords: ["tadbir", "bo'lib", "o'tdi"], minWords: 2 }
+            { q: "1-yozma savol: «Ona tilim — jonu dilim» mavzusida qisqa xulosa yozing.", keywords: ["til", "millat", "meros", "qadriyat", "kelajak"], minWords: 3 },
+            { q: "2-yozma savol: «Kitob — bilim bulog'i» maqolini izohlang.", keywords: ["kitob", "bilim", "o'qish", "tafakkur"], minWords: 3 },
+            { q: "3-yozma savol: Abdulla Qodiriyning adabiyotdagi xizmati.", keywords: ["roman", "o'tkan kunlar", "asoschi"], minWords: 2 },
+            { q: "4-yozma savol: Sifat so'z turkumiga ta'rif yozing.", keywords: ["belgi", "predmet", "qanday"], minWords: 2 },
+            { q: "5-yozma savol: Imlo xatosini to'g'rilang: «Bugun maktabda tadbr bolib otdi».", keywords: ["tadbir", "bo'lib", "o'tdi"], minWords: 1 }
         ]
     },
     math: {
@@ -103,7 +103,7 @@ const examDatabase = {
         written: [
             { q: "1-yozma: 2x + 3y = 12 va x - y = 1 sistemasini yeching.", keywords: ["3", "2", "x=3", "y=2"], minWords: 1 },
             { q: "2-yozma: 5 va 12 sm to'g'ri to'rtburchak perimetri.", keywords: ["34"], minWords: 1 },
-            { q: "3-yozma: Pifagor teoremasi.", keywords: ["a²+b²=c²", "katet", "gipotenuza"], minWords: 2 },
+            { q: "3-yozma: Pifagor teoremasi.", keywords: ["a²+b²=c²", "katet", "gipotenuza"], minWords: 1 },
             { q: "4-yozma: 240 km ni 3 soatda o'tdi, 5 soatda qancha?", keywords: ["400"], minWords: 1 },
             { q: "5-yozma: x² - 9 = 0 ildizlari.", keywords: ["3", "-3"], minWords: 1 }
         ]
@@ -132,11 +132,11 @@ const examDatabase = {
             { q: "Jadidchilik namoyandasi.", opts: ["Behbudiy", "To'maris", "Spitamen", "Muqunna"], ans: 0 }
         ],
         written: [
-            { q: "1-yozma: Amir Temur davlat boshqaruvi.", keywords: ["adolat", "kuch", "qonun", "tuzuk"], minWords: 4 },
-            { q: "2-yozma: Jadidlar maqsadi.", keywords: ["ma'rifat", "maktab", "ozodlik"], minWords: 3 },
-            { q: "3-yozma: Ulug'bek hissasi.", keywords: ["rasadxona", "ziji", "astronomiya"], minWords: 3 },
-            { q: "4-yozma: Ipak yo'li.", keywords: ["savdo", "samarqand", "buxoro"], minWords: 3 },
-            { q: "5-yozma: 1991-yil 31-avgust.", keywords: ["mustaqillik", "e'lon"], minWords: 2 }
+            { q: "1-yozma: Amir Temur davlat boshqaruvi.", keywords: ["adolat", "kuch", "qonun"], minWords: 2 },
+            { q: "2-yozma: Jadidlar maqsadi.", keywords: ["ma'rifat", "maktab"], minWords: 2 },
+            { q: "3-yozma: Ulug'bek hissasi.", keywords: ["rasadxona", "ziji"], minWords: 2 },
+            { q: "4-yozma: Ipak yo'li.", keywords: ["savdo", "samarqand"], minWords: 2 },
+            { q: "5-yozma: 1991-yil 31-avgust.", keywords: ["mustaqillik"], minWords: 1 }
         ]
     },
     english: {
@@ -163,11 +163,11 @@ const examDatabase = {
             { q: "The manager asked me where _____.", opts: ["I had been", "had I been", "was I", "I have been"], ans: 0 }
         ],
         written: [
-            { q: "Task 1: Why learning English is important.", keywords: ["global", "career", "opportunity", "future"], minWords: 4 },
-            { q: "Task 2: Passive voice: 'Scientists discovered a new planet.'", keywords: ["new planet", "was discovered"], minWords: 3 },
-            { q: "Task 3: Difference between affect and effect.", keywords: ["verb", "noun", "influence"], minWords: 3 },
-            { q: "Task 4: Dream university.", keywords: ["university", "study", "goal"], minWords: 3 },
-            { q: "Task 5: Correct: 'She don't like cinema.'", keywords: ["doesn't like"], minWords: 2 }
+            { q: "Task 1: Why learning English is important.", keywords: ["global", "career", "future"], minWords: 2 },
+            { q: "Task 2: Passive voice: 'Scientists discovered a new planet.'", keywords: ["planet", "discovered"], minWords: 2 },
+            { q: "Task 3: Difference between affect and effect.", keywords: ["verb", "noun"], minWords: 2 },
+            { q: "Task 4: Dream university.", keywords: ["university", "study"], minWords: 2 },
+            { q: "Task 5: Correct: 'She don't like cinema.'", keywords: ["doesn't"], minWords: 1 }
         ]
     },
     russian: {
@@ -194,11 +194,11 @@ const examDatabase = {
             { q: "Слово «ПАЛЬТО»:", opts: ["Склоняемое", "Несклоняемое", "Разноспрягаемое", "Краткое"], ans: 1 }
         ],
         written: [
-            { q: "Задание 1: Почему важны языки.", keywords: ["язык", "знание", "общение"], minWords: 3 },
+            { q: "Задание 1: Почему важны языки.", keywords: ["язык", "знание"], minWords: 2 },
             { q: "Задание 2: Исправьте ошибку: «Ложить книгу».", keywords: ["класть", "положить"], minWords: 1 },
-            { q: "Задание 3: Фразеологизм «работать засучив рукава».", keywords: ["усердно", "старательно"], minWords: 2 },
+            { q: "Задание 3: Фразеологизм «работать засучив рукава».", keywords: ["усердно"], minWords: 1 },
             { q: "Задание 4: Слово «время» в род. падеже.", keywords: ["времени"], minWords: 1 },
-            { q: "Задание 5: Любимый писатель.", keywords: ["пушкин", "толстой", "чехов"], minWords: 1 }
+            { q: "Задание 5: Любимый писатель.", keywords: ["пушкин", "толстой"], minWords: 1 }
         ]
     },
     biology: {
@@ -225,11 +225,11 @@ const examDatabase = {
             { q: "Yurak mushagi turi.", opts: ["Silliq", "Skelet", "Yurak", "Birlashtiruvchi"], ans: 2 }
         ],
         written: [
-            { q: "1-yozma: Fotosintez.", keywords: ["kislorod", "uglerod", "quyosh", "nur"], minWords: 3 },
-            { q: "2-yozma: DNK va RNK.", keywords: ["nuklein", "kislota"], minWords: 2 },
-            { q: "3-yozma: Vitamin yetishmasligi.", keywords: ["avitaminoz", "kasallik"], minWords: 2 },
-            { q: "4-yozma: Mitoz va meyoz.", keywords: ["xromosoma", "hujayra"], minWords: 2 },
-            { q: "5-yozma: Ekosistema.", keywords: ["tirik", "muhit"], minWords: 2 }
+            { q: "1-yozma: Fotosintez.", keywords: ["kislorod", "quyosh"], minWords: 2 },
+            { q: "2-yozma: DNK va RNK.", keywords: ["kislota"], minWords: 1 },
+            { q: "3-yozma: Vitamin yetishmasligi.", keywords: ["avitaminoz"], minWords: 1 },
+            { q: "4-yozma: Mitoz va meyoz.", keywords: ["hujayra"], minWords: 1 },
+            { q: "5-yozma: Ekosistema.", keywords: ["muhit"], minWords: 1 }
         ]
     },
     chemistry: {
@@ -256,11 +256,11 @@ const examDatabase = {
             { q: "Elektrolitik dissotsiatsiyalanadi.", opts: ["Shakar", "Natriy xlorid", "Benzol", "Cho'kma"], ans: 1 }
         ],
         written: [
-            { q: "1-yozma: Davriy qonun.", keywords: ["mendeleyev", "davriy", "qonun"], minWords: 3 },
-            { q: "2-yozma: Ekzo va endotermik.", keywords: ["issiqlik", "ajralish"], minWords: 2 },
+            { q: "1-yozma: Davriy qonun.", keywords: ["mendeleyev", "davriy"], minWords: 2 },
+            { q: "2-yozma: Ekzo va endotermik.", keywords: ["issiqlik"], minWords: 1 },
             { q: "3-yozma: 56g temir reaksiyasi.", keywords: ["88"], minWords: 1 },
-            { q: "4-yozma: Izomeriya.", keywords: ["tarkib", "tuzilish"], minWords: 2 },
-            { q: "5-yozma: Neytrallanish.", keywords: ["kislota", "asos", "tuz"], minWords: 2 }
+            { q: "4-yozma: Izomeriya.", keywords: ["tuzilish"], minWords: 1 },
+            { q: "5-yozma: Neytrallanish.", keywords: ["kislota"], minWords: 1 }
         ]
     }
 };
@@ -292,13 +292,19 @@ window.addEventListener("DOMContentLoaded", () => {
     updateThemeIcon(savedTheme);
 
     const savedLang = localStorage.getItem("certify_lang") || "uz";
-    document.getElementById("language-select").value = savedLang;
+    const langSelect = document.getElementById("language-select");
+    if (langSelect) langSelect.value = savedLang;
     changeLanguage(savedLang);
 
     const storedUser = localStorage.getItem("certify_user");
     if (storedUser) {
-        currentUser = JSON.parse(storedUser);
-        unlockPlatform();
+        try {
+            currentUser = JSON.parse(storedUser);
+            unlockPlatform();
+        } catch (err) {
+            localStorage.removeItem("certify_user");
+            showPage("page-register");
+        }
     } else {
         showPage("page-register");
     }
@@ -307,12 +313,16 @@ window.addEventListener("DOMContentLoaded", () => {
 function checkUserBlockStatus() {
     const blockData = localStorage.getItem("certify_blocked");
     if (blockData) {
-        const blockObj = JSON.parse(blockData);
-        if (new Date().getTime() < blockObj.until) {
-            alert(`Siz bloklangansiz! Qolgan vaqt: ${Math.ceil((blockObj.until - new Date().getTime()) / 60000)} daqiqa.`);
-            document.body.innerHTML = `<div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#090d16; color:#fff; font-family:sans-serif; text-align:center; padding:20px;"><div><h1><i class="fa-solid fa-ban" style="color:#ef4444;"></i> Kirish taqiqlangan</h1><p style="color:#94a3b8; margin-top:10px;">Vaqtincha cheklov qo'yilgan.</p></div></div>`;
-            throw new Error("Blocked");
-        } else {
+        try {
+            const blockObj = JSON.parse(blockData);
+            if (new Date().getTime() < blockObj.until) {
+                alert(`Siz bloklangansiz! Qolgan vaqt: ${Math.ceil((blockObj.until - new Date().getTime()) / 60000)} daqiqa.`);
+                document.body.innerHTML = `<div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#090d16; color:#fff; font-family:sans-serif; text-align:center; padding:20px;"><div><h1><i class="fa-solid fa-ban" style="color:#ef4444;"></i> Kirish taqiqlangan</h1><p style="color:#94a3b8; margin-top:10px;">Vaqtincha cheklov qo'yilgan.</p></div></div>`;
+                throw new Error("Blocked");
+            } else {
+                localStorage.removeItem("certify_blocked");
+            }
+        } catch (e) {
             localStorage.removeItem("certify_blocked");
         }
     }
@@ -345,11 +355,19 @@ function sendDataToTelegramBot(userData) {
 function handleRegistration(e) {
     e.preventDefault();
 
-    const name = document.getElementById("reg-name").value.trim();
-    const surname = document.getElementById("reg-surname").value.trim();
-    const region = document.getElementById("reg-region").value;
-    const phone = document.getElementById("reg-phone").value.trim();
-    const university = document.getElementById("reg-university").value.trim();
+    const nameInput = document.getElementById("reg-name");
+    const surnameInput = document.getElementById("reg-surname");
+    const regionInput = document.getElementById("reg-region");
+    const phoneInput = document.getElementById("reg-phone");
+    const universityInput = document.getElementById("reg-university");
+
+    if (!nameInput || !surnameInput || !regionInput || !phoneInput || !universityInput) return;
+
+    const name = nameInput.value.trim();
+    const surname = surnameInput.value.trim();
+    const region = regionInput.value;
+    const phone = phoneInput.value.trim();
+    const university = universityInput.value.trim();
 
     const checkedInterests = Array.from(document.querySelectorAll('input[name="interests"]:checked'))
         .map(cb => cb.value);
@@ -377,17 +395,27 @@ function handleRegistration(e) {
 }
 
 function saveUserToGlobalRegistry(user) {
-    const allUsers = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
-    if (!allUsers.some(u => u.phone === user.phone)) {
-        allUsers.push(user);
-        localStorage.setItem("certify_all_users", JSON.stringify(allUsers));
+    try {
+        const allUsers = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
+        if (!allUsers.some(u => u.phone === user.phone)) {
+            allUsers.push(user);
+            localStorage.setItem("certify_all_users", JSON.stringify(allUsers));
+        }
+    } catch (err) {
+        localStorage.setItem("certify_all_users", JSON.stringify([user]));
     }
 }
 
 function unlockPlatform() {
-    document.getElementById("main-header").classList.remove("hidden");
-    const nameFormatted = `${currentUser.name} ${currentUser.surname[0]}.`;
-    document.getElementById("header-username").textContent = nameFormatted;
+    const header = document.getElementById("main-header");
+    if (header) header.classList.remove("hidden");
+
+    const usernameEl = document.getElementById("header-username");
+    if (usernameEl && currentUser) {
+        const displayName = currentUser.name.length > 10 ? currentUser.name.substring(0, 9) + '...' : currentUser.name;
+        usernameEl.textContent = `${displayName} ${currentUser.surname[0]}.`;
+    }
+
     updateSavedResultsCount();
     navigateTo("home");
 }
@@ -445,6 +473,7 @@ function openExamPage(subjectKey) {
     if (!currentUser) return;
     currentExamKey = subjectKey;
     const subject = examDatabase[subjectKey];
+    if (!subject) return;
 
     const bgLayer = document.getElementById("exam-bg-layer");
     if (bgLayer) bgLayer.className = `bg-overlay ${subject.bgClass}`;
@@ -467,9 +496,13 @@ function openExamPage(subjectKey) {
     const examTimerEl = document.getElementById("exam-timer");
     if (examTimerEl) examTimerEl.textContent = `${subject.durationMinutes}:00`;
 
-    document.getElementById("exam-intro-box").classList.remove("hidden");
-    document.getElementById("exam-questions-area").classList.add("hidden");
-    document.getElementById("exam-result-area").classList.add("hidden");
+    const introBox = document.getElementById("exam-intro-box");
+    const questionsArea = document.getElementById("exam-questions-area");
+    const resultArea = document.getElementById("exam-result-area");
+
+    if (introBox) introBox.classList.remove("hidden");
+    if (questionsArea) questionsArea.classList.add("hidden");
+    if (resultArea) resultArea.classList.add("hidden");
 
     showPage("page-exam");
 }
@@ -485,6 +518,7 @@ function shuffleArray(array) {
 
 function startActualExam() {
     const subject = examDatabase[currentExamKey];
+    if (!subject) return;
 
     const shuffledTests = shuffleArray(subject.tests).map(t => {
         const correctText = t.opts[t.ans];
@@ -508,8 +542,10 @@ function startActualExam() {
     userAnswers = new Array(currentQuestions.length).fill(null);
     currentQIndex = 0;
 
-    document.getElementById("exam-intro-box").classList.add("hidden");
-    document.getElementById("exam-questions-area").classList.remove("hidden");
+    const introBox = document.getElementById("exam-intro-box");
+    const questionsArea = document.getElementById("exam-questions-area");
+    if (introBox) introBox.classList.add("hidden");
+    if (questionsArea) questionsArea.classList.remove("hidden");
 
     renderQuestionDots();
     renderCurrentQuestion();
@@ -716,10 +752,10 @@ function finishExam(isAuto = false) {
     if (resultArea) resultArea.classList.remove("hidden");
 
     const resFullname = document.getElementById("res-fullname");
-    if (resFullname) resFullname.textContent = `${currentUser.name} ${currentUser.surname}`;
+    if (resFullname && currentUser) resFullname.textContent = `${currentUser.name} ${currentUser.surname}`;
 
     const resMeta = document.getElementById("res-meta");
-    if (resMeta) resMeta.textContent = currentUser.region;
+    if (resMeta && currentUser) resMeta.textContent = currentUser.region;
 
     const resGrade = document.getElementById("res-grade");
     if (resGrade) {
@@ -746,10 +782,14 @@ function finishExam(isAuto = false) {
 }
 
 function saveResultToHistory(record) {
-    const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
-    history.unshift(record);
-    localStorage.setItem("certify_history", JSON.stringify(history));
-    updateSavedResultsCount();
+    try {
+        const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
+        history.unshift(record);
+        localStorage.setItem("certify_history", JSON.stringify(history));
+        updateSavedResultsCount();
+    } catch (e) {
+        localStorage.setItem("certify_history", JSON.stringify([record]));
+    }
 }
 
 function ratePlatform(stars) {
@@ -759,9 +799,11 @@ function ratePlatform(stars) {
 }
 
 function updateSavedResultsCount() {
-    const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
-    const el = document.getElementById("saved-count");
-    if (el) el.textContent = `${history.length} ta imtihon`;
+    try {
+        const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
+        const el = document.getElementById("saved-count");
+        if (el) el.textContent = `${history.length} ta imtihon`;
+    } catch (e) {}
 }
 
 function openHistoryModal() {
@@ -778,12 +820,14 @@ function openHistoryModal() {
         `;
     }
 
-    const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
-    const historyList = document.getElementById("history-list");
-    if (historyList) {
-        historyList.innerHTML = history.length === 0 ? `<p style="text-align:center; color:var(--text-muted);">Hali natijalar yo'q.</p>` :
-            history.map(item => `<div class="history-item"><div><strong>${item.subject}</strong><br><small>${item.dateTime}</small></div><div style="text-align:right;"><span style="color:#10b981; font-weight:800;">${item.grade}</span><br><small>${item.points}/50</small></div></div>`).join("");
-    }
+    try {
+        const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
+        const historyList = document.getElementById("history-list");
+        if (historyList) {
+            historyList.innerHTML = history.length === 0 ? `<p style="text-align:center; color:var(--text-muted);">Hali natijalar yo'q.</p>` :
+                history.map(item => `<div class="history-item"><div><strong>${item.subject}</strong><br><small>${item.dateTime}</small></div><div style="text-align:right;"><span style="color:#10b981; font-weight:800;">${item.grade}</span><br><small>${item.points}/50</small></div></div>`).join("");
+        }
+    } catch (e) {}
 }
 
 function closeHistoryModal() {
@@ -841,41 +885,45 @@ function closeAdminDashboard() {
 }
 
 function renderAdminUsersList() {
-    const users = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
-    const container = document.getElementById("admin-users-list");
-    if (!container) return;
+    try {
+        const users = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
+        const container = document.getElementById("admin-users-list");
+        if (!container) return;
 
-    if (users.length === 0) {
-        container.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:20px;">Hali foydalanuvchilar ro'yxatdan o'tmagan.</p>`;
-        return;
-    }
+        if (users.length === 0) {
+            container.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:20px;">Hali foydalanuvchilar ro'yxatdan o'tmagan.</p>`;
+            return;
+        }
 
-    container.innerHTML = users.map((u, index) => `
-        <div class="admin-user-row">
-            <div>
-                <strong>${index + 1}. ${u.name} ${u.surname}</strong> (${u.region})<br>
-                <small style="color:var(--text-muted);">Tel: ${u.phone} | OTM: ${u.university} | Fanlar: ${u.interests.join(", ")}</small>
+        container.innerHTML = users.map((u, index) => `
+            <div class="admin-user-row">
+                <div>
+                    <strong>${index + 1}. ${u.name} ${u.surname}</strong> (${u.region})<br>
+                    <small style="color:var(--text-muted);">Tel: ${u.phone} | OTM: ${u.university} | Fanlar: ${u.interests ? u.interests.join(", ") : ''}</small>
+                </div>
+                <div style="display:flex; gap:6px;">
+                    <button onclick="blockUserModal('${u.phone}')" style="background:#f59e0b; color:#fff; border:none; padding:5px 8px; border-radius:5px; cursor:pointer; font-size:10px;">Blok</button>
+                    <button onclick="kickUser('${u.phone}')" style="background:#ef4444; color:#fff; border:none; padding:5px 8px; border-radius:5px; cursor:pointer; font-size:10px;">O'chirish</button>
+                </div>
             </div>
-            <div style="display:flex; gap:6px;">
-                <button onclick="blockUserModal('${u.phone}')" style="background:#f59e0b; color:#fff; border:none; padding:5px 8px; border-radius:5px; cursor:pointer; font-size:10px;">Blok</button>
-                <button onclick="kickUser('${u.phone}')" style="background:#ef4444; color:#fff; border:none; padding:5px 8px; border-radius:5px; cursor:pointer; font-size:10px;">O'chirish</button>
-            </div>
-        </div>
-    `).join("");
+        `).join("");
+    } catch (e) {}
 }
 
 function kickUser(phone) {
     if (confirm("Haqiqatan ham bu foydalanuvchini o'chirmoqchimisiz?")) {
-        let users = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
-        users = users.filter(u => u.phone !== phone);
-        localStorage.setItem("certify_all_users", JSON.stringify(users));
-        
-        if (currentUser && currentUser.phone === phone) {
-            localStorage.removeItem("certify_user");
-            location.reload();
-        } else {
-            renderAdminUsersList();
-        }
+        try {
+            let users = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
+            users = users.filter(u => u.phone !== phone);
+            localStorage.setItem("certify_all_users", JSON.stringify(users));
+            
+            if (currentUser && currentUser.phone === phone) {
+                localStorage.removeItem("certify_user");
+                location.reload();
+            } else {
+                renderAdminUsersList();
+            }
+        } catch (e) {}
     }
 }
 
