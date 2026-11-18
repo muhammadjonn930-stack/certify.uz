@@ -10,9 +10,6 @@
     --input-bg: rgba(15, 23, 42, 0.9);
     --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
-* {
-    cursor: pointer;
-}
 
 [data-theme="light"] {
     --bg-main: #f1f5f9;
@@ -43,7 +40,7 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
 .bg-overlay::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(9, 13, 22, 0.88), rgba(9, 13, 22, 0.78)); }
 [data-theme="light"] .bg-overlay::after { background: linear-gradient(135deg, rgba(241, 245, 249, 0.9), rgba(226, 232, 240, 0.8)); }
 
-/* Ro'yxatdan o'tish sahifasi uchun maxsus Alfraganus University binosi va ta'lim muhiti foni */
+/* Ro'yxatdan o'tish sahifasi uchun Alfraganus University muhiti foni */
 .reg-bg { 
     background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80'); 
 }
@@ -56,15 +53,9 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
 .bg-biology { background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1920&q=80'); }
 .bg-chemistry { background-image: url('https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=1920&q=80'); }
 
-@keyframes fadeUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes slideLeft { from { opacity: 0; transform: translateX(-15px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes zoomIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-up { animation: fadeUp 0.3s ease forwards; }
 
-.animate-fade-up { animation: fadeUp 0.4s ease forwards; }
-.animate-slide-left { animation: slideLeft 0.4s ease forwards; }
-.animate-zoom-in { animation: zoomIn 0.3s ease forwards; }
-
-/* HEADER - Ismi uzun foydalanuvchilar (`Muhammadjon N.`) uchun to'g'rilandi */
 .glass-header { 
     position: sticky; 
     top: 0; 
@@ -94,7 +85,7 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
 .icon-btn { width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--glass-border); background: var(--input-bg); color: var(--text-main); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 .icon-btn:hover { background: var(--accent); color: #fff; }
 
-/* Ismi uzun bo'lsa ham sig'ishi uchun font-size va padding kichraytirildi */
+/* Ismi uzun bo'lsa ham buzilmaydigan moslashuvchan badge */
 .profile-badge { 
     display: flex; 
     align-items: center; 
@@ -107,7 +98,7 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
     font-weight: 600; 
     font-size: 12px; 
     cursor: pointer; 
-    max-width: 140px;
+    max-width: 150px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -148,16 +139,16 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
 .admin-link-box button { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
 .admin-link-box button:hover { background: #f59e0b; color: #fff; }
 
-/* Bosh sahifa grid dizayni ustma-ust chiqishdan himoyalandi */
+/* Bosh sahifa — hech qanday qotishlarsiz toza va silliq joylashuv */
 .home-layout { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 290px 1fr; gap: 14px; align-items: start; }
 .glass-card { background: var(--glass-bg); backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); }
 
-.subjects-sidebar { background: var(--glass-bg); backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 14px; position: sticky; top: 60px; }
+.subjects-sidebar { background: var(--glass-bg); backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 14px; }
 .sidebar-title { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
 .sidebar-title i { color: var(--accent); font-size: 16px; }
 .sidebar-desc { font-size: 11px; color: var(--text-muted); margin-bottom: 10px; }
 
-.subject-list { display: flex; flex-direction: column; gap: 8px; max-height: calc(100vh - 200px); overflow-y: auto; padding-right: 2px; }
+.subject-list { display: flex; flex-direction: column; gap: 8px; }
 .subject-card { width: 100%; display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; border: 1px solid var(--glass-border); background: var(--input-bg); color: var(--text-main); text-align: left; cursor: pointer; transition: 0.2s; }
 .subject-card:hover { border-color: var(--accent); }
 
@@ -252,7 +243,6 @@ body { background-color: var(--bg-main); color: var(--text-main); min-height: 10
 .admin-user-row { display: flex; justify-content: space-between; align-items: center; padding: 8px; border-bottom: 1px solid var(--glass-border); gap: 6px; font-size: 11px; }
 .admin-user-row:last-child { border-bottom: none; }
 
-/* Mobil moslashuvchanlik (Responsive) qoidalar */
 @media screen and (max-width: 900px) {
     .home-layout {
         grid-template-columns: 1fr;
