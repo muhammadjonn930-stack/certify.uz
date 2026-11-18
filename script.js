@@ -309,8 +309,8 @@ function checkUserBlockStatus() {
     if (blockData) {
         const blockObj = JSON.parse(blockData);
         if (new Date().getTime() < blockObj.until) {
-            alert(`Siz admin tomonidan vaqtincha bloklangansiz! Qolgan vaqt: ${Math.ceil((blockObj.until - new Date().getTime()) / 60000)} daqiqa.`);
-            document.body.innerHTML = `<div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#090d16; color:#fff; font-family:sans-serif; text-align:center; padding:20px;"><div><h1><i class="fa-solid fa-ban" style="color:#ef4444;"></i> Kirish taqiqlangan</h1><p style="color:#94a3b8; margin-top:10px;">Admin tomonidan vaqtincha cheklov qo'yilgan.</p></div></div>`;
+            alert(`Siz bloklangansiz! Qolgan vaqt: ${Math.ceil((blockObj.until - new Date().getTime()) / 60000)} daqiqa.`);
+            document.body.innerHTML = `<div style="display:flex; justify-content:center; align-items:center; height:100vh; background:#090d16; color:#fff; font-family:sans-serif; text-align:center; padding:20px;"><div><h1><i class="fa-solid fa-ban" style="color:#ef4444;"></i> Kirish taqiqlangan</h1><p style="color:#94a3b8; margin-top:10px;">Vaqtincha cheklov qo'yilgan.</p></div></div>`;
             throw new Error("Blocked");
         } else {
             localStorage.removeItem("certify_blocked");
@@ -386,7 +386,8 @@ function saveUserToGlobalRegistry(user) {
 
 function unlockPlatform() {
     document.getElementById("main-header").classList.remove("hidden");
-    document.getElementById("header-username").textContent = `${currentUser.name} ${currentUser.surname[0]}.`;
+    const nameFormatted = `${currentUser.name} ${currentUser.surname[0]}.`;
+    document.getElementById("header-username").textContent = nameFormatted;
     updateSavedResultsCount();
     navigateTo("home");
 }
@@ -408,7 +409,10 @@ function navigateTo(pageName) {
 
 function showPage(pageId) {
     document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-    document.getElementById(pageId).classList.add("active");
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.classList.add("active");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -432,7 +436,9 @@ function toggleTheme() {
 
 function updateThemeIcon(theme) {
     const btnIcon = document.querySelector("#theme-toggle i");
-    btnIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    if (btnIcon) {
+        btnIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    }
 }
 
 function openExamPage(subjectKey) {
@@ -441,14 +447,25 @@ function openExamPage(subjectKey) {
     const subject = examDatabase[subjectKey];
 
     const bgLayer = document.getElementById("exam-bg-layer");
-    bgLayer.className = `bg-overlay ${subject.bgClass}`;
+    if (bgLayer) bgLayer.className = `bg-overlay ${subject.bgClass}`;
 
-    document.getElementById("exam-title").textContent = subject.title;
-    document.getElementById("exam-icon").className = `fa-solid ${subject.icon}`;
-    document.getElementById("intro-icon").innerHTML = `<i class="fa-solid ${subject.icon}"></i>`;
-    document.getElementById("intro-subject-title").textContent = `${subject.title} — Imtihon`;
-    document.getElementById("intro-subject-desc").textContent = subject.desc;
-    document.getElementById("exam-timer").textContent = `${subject.durationMinutes}:00`;
+    const examTitleEl = document.getElementById("exam-title");
+    if (examTitleEl) examTitleEl.textContent = subject.title;
+
+    const examIconEl = document.getElementById("exam-icon");
+    if (examIconEl) examIconEl.className = `fa-solid ${subject.icon}`;
+
+    const introIconEl = document.getElementById("intro-icon");
+    if (introIconEl) introIconEl.innerHTML = `<i class="fa-solid ${subject.icon}"></i>`;
+
+    const introSubjectTitleEl = document.getElementById("intro-subject-title");
+    if (introSubjectTitleEl) introSubjectTitleEl.textContent = `${subject.title} — Imtihon`;
+
+    const introSubjectDescEl = document.getElementById("intro-subject-desc");
+    if (introSubjectDescEl) introSubjectDescEl.textContent = subject.desc;
+
+    const examTimerEl = document.getElementById("exam-timer");
+    if (examTimerEl) examTimerEl.textContent = `${subject.durationMinutes}:00`;
 
     document.getElementById("exam-intro-box").classList.remove("hidden");
     document.getElementById("exam-questions-area").classList.add("hidden");
@@ -517,12 +534,15 @@ function startTimer(seconds) {
 function updateTimerDisplay() {
     const mins = Math.floor(timeRemaining / 60);
     const secs = timeRemaining % 60;
-    document.getElementById("exam-timer").textContent =
-        `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    const timerEl = document.getElementById("exam-timer");
+    if (timerEl) {
+        timerEl.textContent = `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    }
 }
 
 function renderQuestionDots() {
     const dotsContainer = document.getElementById("question-dots");
+    if (!dotsContainer) return;
     dotsContainer.innerHTML = "";
     currentQuestions.forEach((_, idx) => {
         const btn = document.createElement("button");
@@ -545,43 +565,51 @@ function renderCurrentQuestion() {
     const qObj = currentQuestions[currentQIndex];
     const total = currentQuestions.length;
 
-    document.getElementById("question-counter").textContent = `Savol: ${currentQIndex + 1} / ${total}`;
-    document.getElementById("progress-fill").style.width = `${((currentQIndex + 1) / total) * 100}%`;
+    const counterEl = document.getElementById("question-counter");
+    if (counterEl) counterEl.textContent = `Savol: ${currentQIndex + 1} / ${total}`;
+
+    const progressFill = document.getElementById("progress-fill");
+    if (progressFill) progressFill.style.width = `${((currentQIndex + 1) / total) * 100}%`;
 
     const badge = document.getElementById("question-type-badge");
-    if (qObj.type === "test") {
-        badge.textContent = "Yopiq test (2 ball)";
-        badge.className = "q-badge test";
-    } else {
-        badge.textContent = "Yozma savol (4 ball)";
-        badge.className = "q-badge written";
+    if (badge) {
+        if (qObj.type === "test") {
+            badge.textContent = "Yopiq test (2 ball)";
+            badge.className = "q-badge test";
+        } else {
+            badge.textContent = "Yozma savol (4 ball)";
+            badge.className = "q-badge written";
+        }
     }
 
-    document.getElementById("question-text").textContent = `${currentQIndex + 1}. ${qObj.q}`;
+    const qTextEl = document.getElementById("question-text");
+    if (qTextEl) qTextEl.textContent = `${currentQIndex + 1}. ${qObj.q}`;
 
     const optionsContainer = document.getElementById("options-container");
     const writtenContainer = document.getElementById("written-container");
 
     if (qObj.type === "test") {
-        optionsContainer.classList.remove("hidden");
-        writtenContainer.classList.add("hidden");
-        optionsContainer.innerHTML = "";
-
-        const letters = ["A", "B", "C", "D"];
-        qObj.opts.forEach((optText, i) => {
-            const div = document.createElement("div");
-            div.className = `option-item ${userAnswers[currentQIndex] === i ? "selected" : ""}`;
-            div.innerHTML = `<span class="opt-letter">${letters[i]}</span> <span>${optText}</span>`;
-            div.onclick = () => {
-                userAnswers[currentQIndex] = i;
-                renderCurrentQuestion();
-            };
-            optionsContainer.appendChild(div);
-        });
+        if (optionsContainer) optionsContainer.classList.remove("hidden");
+        if (writtenContainer) writtenContainer.classList.add("hidden");
+        if (optionsContainer) {
+            optionsContainer.innerHTML = "";
+            const letters = ["A", "B", "C", "D"];
+            qObj.opts.forEach((optText, i) => {
+                const div = document.createElement("div");
+                div.className = `option-item ${userAnswers[currentQIndex] === i ? "selected" : ""}`;
+                div.innerHTML = `<span class="opt-letter">${letters[i]}</span> <span>${optText}</span>`;
+                div.onclick = () => {
+                    userAnswers[currentQIndex] = i;
+                    renderCurrentQuestion();
+                };
+                optionsContainer.appendChild(div);
+            });
+        }
     } else {
-        optionsContainer.classList.add("hidden");
-        writtenContainer.classList.remove("hidden");
-        document.getElementById("written-answer").value = userAnswers[currentQIndex] || "";
+        if (optionsContainer) optionsContainer.classList.add("hidden");
+        if (writtenContainer) writtenContainer.classList.remove("hidden");
+        const writtenAns = document.getElementById("written-answer");
+        if (writtenAns) writtenAns.value = userAnswers[currentQIndex] || "";
     }
 
     document.querySelectorAll(".q-dot").forEach((dot, idx) => {
@@ -590,20 +618,28 @@ function renderCurrentQuestion() {
         if (idx === currentQIndex) dot.classList.add("current");
     });
 
-    document.getElementById("btn-prev").disabled = currentQIndex === 0;
+    const btnPrev = document.getElementById("btn-prev");
+    if (btnPrev) btnPrev.disabled = currentQIndex === 0;
+
+    const btnNext = document.getElementById("btn-next");
+    const btnFinish = document.getElementById("btn-finish");
+
     if (currentQIndex === total - 1) {
-        document.getElementById("btn-next").classList.add("hidden");
-        document.getElementById("btn-finish").classList.remove("hidden");
+        if (btnNext) btnNext.classList.add("hidden");
+        if (btnFinish) btnFinish.classList.remove("hidden");
     } else {
-        document.getElementById("btn-next").classList.remove("hidden");
-        document.getElementById("btn-finish").classList.add("hidden");
+        if (btnNext) btnNext.classList.remove("hidden");
+        if (btnFinish) btnFinish.classList.add("hidden");
     }
 }
 
 function saveCurrentWrittenIfAny() {
     if (currentQuestions[currentQIndex] && currentQuestions[currentQIndex].type === "written") {
-        const val = document.getElementById("written-answer").value.trim();
-        userAnswers[currentQIndex] = val;
+        const writtenAns = document.getElementById("written-answer");
+        if (writtenAns) {
+            const val = writtenAns.value.trim();
+            userAnswers[currentQIndex] = val;
+        }
     }
 }
 
@@ -656,8 +692,10 @@ function finishExam(isAuto = false) {
         return;
     }
 
-    clearInterval(timerInterval);
-    timerInterval = null;
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
 
     let testPoints = 0, writtenPoints = 0;
     currentQuestions.forEach((qObj, idx) => {
@@ -672,18 +710,37 @@ function finishExam(isAuto = false) {
     const now = new Date();
     const dateTimeStr = `${now.toLocaleDateString("uz-UZ")} • ${now.toLocaleTimeString("uz-UZ", { hour: "2-digit", minute: "2-digit" })}`;
 
-    document.getElementById("exam-questions-area").classList.add("hidden");
-    document.getElementById("exam-result-area").classList.remove("hidden");
+    const questionsArea = document.getElementById("exam-questions-area");
+    const resultArea = document.getElementById("exam-result-area");
+    if (questionsArea) questionsArea.classList.add("hidden");
+    if (resultArea) resultArea.classList.remove("hidden");
 
-    document.getElementById("res-fullname").textContent = `${currentUser.name} ${currentUser.surname}`;
-    document.getElementById("res-meta").textContent = currentUser.region;
-    document.getElementById("res-grade").textContent = gradeInfo.grade;
-    document.getElementById("res-grade").style.color = gradeInfo.color;
-    document.getElementById("res-grade-circle").style.borderColor = gradeInfo.color;
-    document.getElementById("res-subject").textContent = examDatabase[currentExamKey].title;
-    document.getElementById("res-points").textContent = `${totalPoints} / 50 (${percentage}%)`;
-    document.getElementById("res-datetime").textContent = dateTimeStr;
-    document.getElementById("res-feedback").innerHTML = gradeInfo.msg;
+    const resFullname = document.getElementById("res-fullname");
+    if (resFullname) resFullname.textContent = `${currentUser.name} ${currentUser.surname}`;
+
+    const resMeta = document.getElementById("res-meta");
+    if (resMeta) resMeta.textContent = currentUser.region;
+
+    const resGrade = document.getElementById("res-grade");
+    if (resGrade) {
+        resGrade.textContent = gradeInfo.grade;
+        resGrade.style.color = gradeInfo.color;
+    }
+
+    const gradeCircle = document.getElementById("res-grade-circle");
+    if (gradeCircle) gradeCircle.style.borderColor = gradeInfo.color;
+
+    const resSubject = document.getElementById("res-subject");
+    if (resSubject) resSubject.textContent = examDatabase[currentExamKey].title;
+
+    const resPoints = document.getElementById("res-points");
+    if (resPoints) resPoints.textContent = `${totalPoints} / 50 (${percentage}%)`;
+
+    const resDatetime = document.getElementById("res-datetime");
+    if (resDatetime) resDatetime.textContent = dateTimeStr;
+
+    const resFeedback = document.getElementById("res-feedback");
+    if (resFeedback) resFeedback.innerHTML = gradeInfo.msg;
 
     saveResultToHistory({ subject: examDatabase[currentExamKey].title, grade: gradeInfo.grade, points: totalPoints, percent: percentage, dateTime: dateTimeStr });
 }
@@ -697,7 +754,8 @@ function saveResultToHistory(record) {
 
 function ratePlatform(stars) {
     document.querySelectorAll("#star-rating i").forEach((el, idx) => el.classList.toggle("active", idx < stars));
-    document.getElementById("rating-thanks").classList.remove("hidden");
+    const thanksEl = document.getElementById("rating-thanks");
+    if (thanksEl) thanksEl.classList.remove("hidden");
 }
 
 function updateSavedResultsCount() {
@@ -707,37 +765,61 @@ function updateSavedResultsCount() {
 }
 
 function openHistoryModal() {
-    document.getElementById("history-modal").classList.remove("hidden");
-    document.getElementById("user-profile-summary").innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div><strong>${currentUser.name} ${currentUser.surname}</strong> (${currentUser.region})<br>Tel: ${currentUser.phone}</div>
-            <button onclick="editProfileData()" style="background: rgba(239, 68, 68, 0.15); border:1px solid #ef4444; color:#f87171; padding:5px 10px; border-radius:6px; cursor:pointer; font-size:11px;">Tahrirlash</button>
-        </div>
-    `;
+    const modal = document.getElementById("history-modal");
+    if (modal) modal.classList.remove("hidden");
+
+    const profileSummary = document.getElementById("user-profile-summary");
+    if (profileSummary && currentUser) {
+        profileSummary.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div><strong>${currentUser.name} ${currentUser.surname}</strong> (${currentUser.region})<br>Tel: ${currentUser.phone}</div>
+                <button onclick="editProfileData()" style="background: rgba(239, 68, 68, 0.15); border:1px solid #ef4444; color:#f87171; padding:5px 10px; border-radius:6px; cursor:pointer; font-size:11px;">Tahrirlash</button>
+            </div>
+        `;
+    }
+
     const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
-    document.getElementById("history-list").innerHTML = history.length === 0 ? `<p style="text-align:center; color:var(--text-muted);">Hali natijalar yo'q.</p>` :
-        history.map(item => `<div class="history-item"><div><strong>${item.subject}</strong><br><small>${item.dateTime}</small></div><div style="text-align:right;"><span style="color:#10b981; font-weight:800;">${item.grade}</span><br><small>${item.points}/50</small></div></div>`).join("");
+    const historyList = document.getElementById("history-list");
+    if (historyList) {
+        historyList.innerHTML = history.length === 0 ? `<p style="text-align:center; color:var(--text-muted);">Hali natijalar yo'q.</p>` :
+            history.map(item => `<div class="history-item"><div><strong>${item.subject}</strong><br><small>${item.dateTime}</small></div><div style="text-align:right;"><span style="color:#10b981; font-weight:800;">${item.grade}</span><br><small>${item.points}/50</small></div></div>`).join("");
+    }
 }
 
-function closeHistoryModal() { document.getElementById("history-modal").classList.add("hidden"); }
+function closeHistoryModal() {
+    const modal = document.getElementById("history-modal");
+    if (modal) modal.classList.add("hidden");
+}
 
 function editProfileData() {
     closeHistoryModal();
     localStorage.removeItem("certify_user");
     currentUser = null;
-    document.getElementById("register-form").reset();
-    document.getElementById("main-header").classList.add("hidden");
+    const regForm = document.getElementById("register-form");
+    if (regForm) regForm.reset();
+    const mainHeader = document.getElementById("main-header");
+    if (mainHeader) mainHeader.classList.add("hidden");
     showPage("page-register");
 }
 
 /* ADMIN PANEL */
-function openAdminLoginModal() { document.getElementById("admin-login-modal").classList.remove("hidden"); }
-function closeAdminLoginModal() { document.getElementById("admin-login-modal").classList.add("hidden"); }
+function openAdminLoginModal() {
+    const modal = document.getElementById("admin-login-modal");
+    if (modal) modal.classList.remove("hidden");
+}
+
+function closeAdminLoginModal() {
+    const modal = document.getElementById("admin-login-modal");
+    if (modal) modal.classList.add("hidden");
+}
 
 function handleAdminLogin(e) {
     e.preventDefault();
-    const login = document.getElementById("admin-login").value.trim();
-    const pass = document.getElementById("admin-pass").value.trim();
+    const loginInput = document.getElementById("admin-login");
+    const passInput = document.getElementById("admin-pass");
+
+    const login = loginInput ? loginInput.value.trim() : "";
+    const pass = passInput ? passInput.value.trim() : "";
 
     if (login === "RTF" && pass === "AFUMN") {
         closeAdminLoginModal();
@@ -748,15 +830,20 @@ function handleAdminLogin(e) {
 }
 
 function openAdminDashboard() {
-    document.getElementById("admin-dashboard-modal").classList.remove("hidden");
+    const modal = document.getElementById("admin-dashboard-modal");
+    if (modal) modal.classList.remove("hidden");
     renderAdminUsersList();
 }
 
-function closeAdminDashboard() { document.getElementById("admin-dashboard-modal").classList.add("hidden"); }
+function closeAdminDashboard() {
+    const modal = document.getElementById("admin-dashboard-modal");
+    if (modal) modal.classList.add("hidden");
+}
 
 function renderAdminUsersList() {
     const users = JSON.parse(localStorage.getItem("certify_all_users") || "[]");
     const container = document.getElementById("admin-users-list");
+    if (!container) return;
 
     if (users.length === 0) {
         container.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:20px;">Hali foydalanuvchilar ro'yxatdan o'tmagan.</p>`;
