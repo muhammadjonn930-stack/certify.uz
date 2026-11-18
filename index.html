@@ -10,7 +10,7 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <!-- GLOBAL HEADER (Admin tugmasi olib tashlandi) -->
+    <!-- GLOBAL HEADER -->
     <header id="main-header" class="glass-header hidden">
         <div class="header-left">
             <div class="logo-box" onclick="navigateTo('home')" title="Bosh sahifaga qaytish">
@@ -21,8 +21,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="header-spacer"></div>
 
         <div class="header-right">
             <div class="lang-selector">
@@ -45,14 +43,14 @@
         </div>
     </header>
 
-    <!-- 1-SAHIFA: RO'YXATDAN O'TISH -->
+    <!-- 1-SAHIFA: RO'YXATDAN O'TISH (Alfraganus University foni bilan) -->
     <section id="page-register" class="page active">
         <div class="bg-overlay reg-bg"></div>
         <div class="reg-container animate-fade-up">
             <div class="reg-header">
                 <div class="logo-icon large"><i class="fa-solid fa-building-columns"></i></div>
                 <h1>CERTIFY.UZ</h1>
-                <p>Alfraganus University ko'magida tayyorlangan Milliy Sertifikat imtihonlari rasmiy simulyatori.</p>
+                <p>Alfraganus University rasmiy ko'magidagi Milliy Sertifikat simulyatori.</p>
             </div>
 
             <form id="register-form" onsubmit="handleRegistration(event)">
@@ -96,7 +94,7 @@
 
                 <div class="input-group">
                     <label><i class="fa-solid fa-building-columns"></i> Qaysi universitetga topshirmoqchisiz?</label>
-                    <input type="text" id="reg-university" placeholder="Masalan: Alfraganus University, TDYU..." required>
+                    <input type="text" id="reg-university" placeholder="Masalan: Alfraganus University..." required>
                 </div>
 
                 <div class="input-group">
@@ -118,7 +116,6 @@
                 </button>
             </form>
             
-            <!-- Admin panelga kirish tugmasi ro'yxatdan o'tish qismining ostiga joylashtirildi -->
             <div class="admin-link-box">
                 <button onclick="openAdminLoginModal()">
                     <i class="fa-solid fa-user-shield"></i> Admin panelga kirish
@@ -218,32 +215,32 @@
                     <span class="badge-glow" data-i18n="heroBadge">🚀 2026 Milliy Sertifikat Simulyatori</span>
                     <h1 data-i18n="heroTitle">Haqiqiy imtihonga kirmasdan turib, o'z darajangizni aniq bilib oling!</h1>
                     <p data-i18n="heroSubtitle">
-                        O'zbekistonda minglab yoshlar OTMga kirishda imtiyoz va qo'shimcha ball beruvchi <strong>Milliy Sertifikat</strong> imtihonlariga tayyorlanishmoqda. Biz har bir abituriyentga bepul, tezkor va adolatli sinov maydonini taqdim etish uchun ushbu platformani ishlab chiqdik. Davlat test markazi standartidagi yopiq testlar va yozma topshiriqlar orqali o'z darajangizni sinab ko'ring.
+                        O'zbekistonda minglab yoshlar OTMga kirishda imtiyoz beruvchi <strong>Milliy Sertifikat</strong> imtihonlariga tayyorlanishmoqda. Davlat test markazi standartidagi yopiq testlar va yozma topshiriqlar orqali o'z darajangizni sinab ko'ring.
                     </p>
                     
                     <div class="about-grid">
                         <div class="about-item">
                             <strong><i class="fa-solid fa-clock"></i> 35 Daqiqalik Rejim</strong>
-                            Istalgan joyda atigi 35 daqiqa ichida to'liq diagnostika olasiz.
+                            Istalgan joyda atigi 35 daqiqada diagnostika.
                         </div>
                         <div class="about-item">
                             <strong><i class="fa-solid fa-shield-halved"></i> To'liq Himoya</strong>
-                            Savollarni nusxalash va o'ng tugma bosish bloklangan.
+                            Nusxalash va matnni belgilash bloklangan.
                         </div>
                         <div class="about-item">
                             <strong><i class="fa-solid fa-pen-nib"></i> Test + Yozma Tahlil</strong>
-                            5 ta ochiq yozma savol orqali savodxonlik tekshiriladi.
+                            5 ta ochiq yozma savol tekshiriladi.
                         </div>
                         <div class="about-item">
                             <strong><i class="fa-solid fa-award"></i> Aniq Sertifikat Darajasi</strong>
-                            A+, A, B+, B, C+, C darajalaridan qaysi biriga loyiqligingiz aniqlanadi.
+                            A+, A, B+, B, C+, C darajalari aniqlanadi.
                         </div>
                     </div>
 
                     <div class="hero-stats">
                         <div class="stat-item"><h3>7 ta</h3><p data-i18n="stat1">Fanlar</p></div>
-                        <div class="stat-item"><h3>35m</h3><p>Imtihon Vaqti</p></div>
-                        <div class="stat-item"><h3>A+ - C</h3><p>Aniq Daraja</p></div>
+                        <div class="stat-item"><h3>35m</h3><p>Vaqt</p></div>
+                        <div class="stat-item"><h3>A+ - C</h3><p>Daraja</p></div>
                     </div>
                 </div>
             </main>
@@ -280,7 +277,422 @@
                     <div class="rule-item"><i class="fa-solid fa-list-check"></i> <span><strong>15 ta</strong> yopiq test (har biri 2 ball)</span></div>
                     <div class="rule-item"><i class="fa-solid fa-pen-nib"></i> <span><strong>5 ta</strong> yozma ochiq savol (har biri 4 ball)</span></div>
                     <div class="rule-item"><i class="fa-solid fa-clock"></i> <span>Jami vaqt: <strong>35 daqiqa</strong></span></div>
-                    <div class="rule-item"><i class="fa-solid fa-ban" style="color:#ef4444;"></i> <span><strong>Diqqat:</strong> Savollarni nusxalash taqiqlangan!</span></div>
+                    <div class="rule-item"><i class="fa-solid fa-ban" style="color:#ef4444;"></i> <span><strong>Diqqat:</strong> Nusxalash taqiqlangan!</span></div>
+                </div>
+
+                <button class="btn-primary large-btn" onclick="startActualExam()">
+                    <i class="fa-solid fa-play"></i> Imtihonni Boshlash
+                </button>
+            </div>
+
+            <div id="exam-questions-area" class="hidden">
+                <div class="progress-container glass-card">
+                    <div class="progress-info">
+                        <span id="question-counter">Savol: 1 / 20</span>
+                        <span id="question-type-badge" class="q-badge test">Test savoli</span>
+                    </div>
+                    <div class="progress-track">
+                        <div id="progress-fill" class="progress-fill" style="width: 5%;"></div>
+                    </div>
+                </div>
+
+                <div class="question-card glass-card no-select">
+                    <h3 id="question-text">Savol matni...</h3>
+                    
+                    <div id="options-container" class="options-list"></div>
+
+                    <div id="written-container" class="written-box hidden">
+                        <label for="written-answer"><i class="fa-solid fa-pen-to-square"></i> Javobingizni yozing:</label>
+                        <textarea id="written-answer" rows="4" placeholder="Javobingiz..."></textarea>
+                    </div>
+
+                    <div class="question-nav">
+                        <button id="btn-prev" class="btn-secondary" onclick="prevQuestion()" disabled>
+                            <i class="fa-solid fa-chevron-left"></i> Oldingi
+                        </button>
+                        
+                        <div class="question-dots" id="question-dots"></div>
+
+                        <button id="btn-next" class="btn-primary" onclick="nextQuestion()">
+                            Keyingi <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                        <button id="btn-finish" class="btn-success hidden" onclick="finishExam()">
+                            <i class="fa-solid fa-check-double"></i> Yakunlash
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="exam-result-area" class="hidden">
+                <div class="result-card glass-card animate-fade-up">
+                    <div class="certificate-header">
+                        <span class="cert-tag">RASMIY NATIJA</span>
+                        <h2 id="res-fullname">Ism Familiya</h2>
+                        <p id="res-meta">Viloyat</p>
+                    </div>
+
+                    <div class="score-showcase">
+                        <div class="grade-circle" id="res-grade-circle">
+                            <span class="grade-label">DARAJA</span>
+                            <h1 id="res-grade">A+</h1>
+                        </div>
+                        <div class="score-details">
+                            <div class="score-row"><span>Fan:</span> <strong id="res-subject">-</strong></div>
+                            <div class="score-row"><span>Ball:</span> <strong id="res-points">0 / 50</strong></div>
+                            <div class="score-row"><span>Vaqt:</span> <strong id="res-datetime">-</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="ai-feedback-box" id="res-feedback"></div>
+
+                    <div class="rating-box">
+                        <h4>Platformani baholang:</h4>
+                        <div class="stars" id="star-rating">
+                            <i class="fa-solid fa-star" onclick="ratePlatform(1)"></i>
+                            <i class="fa-solid fa-star" onclick="ratePlatform(2)"></i>
+                            <i class="fa-solid fa-star" onclick="ratePlatform(3)"></i>
+                            <i class="fa-solid fa-star" onclick="ratePlatform(4)"></i>
+                            <i class="fa-solid fa-star" onclick="ratePlatform(5)"></i>
+                        </div>
+                        <p id="rating-thanks" class="hidden">Rahmat!</p>
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="btn-secondary" onclick="navigateTo('home')">Bosh sahifa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NATIJALAR TARIXI MODALI -->
+    <div id="history-modal" class="modal hidden">
+        <div class="modal-content glass-card animate-zoom-in">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-award"></i> Saqlangan Natijalar</h3>
+                <button class="close-modal" onclick="closeHistoryModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="user-profile-summary" class="profile-summary"></div>
+            <div id="history-list" class="history-list"></div>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODALI -->
+    <div id="admin-login-modal" class="modal hidden">
+        <div class="modal-content glass-card animate-zoom-in" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-lock"></i> Admin Kirish</h3>
+                <button class="close-modal" onclick="closeAdminLoginModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="input-group">
+                    <label>Login</label>
+                    <input type="text" id="admin-login" placeholder="Loginni kiriting" required>
+                </div>
+                <div class="input-group">
+                    <label>Parol</label>
+                    <input type="password" id="admin-pass" placeholder="Parolni kiriting" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Kirish</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL DASHBOARD MODALI -->
+    <div id="admin-dashboard-modal" class="modal hidden">
+        <div class="modal-content glass-card animate-zoom-in" style="max-width: 900px;">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-user-shield"></i> Admin Boshqaruv Paneli</h3>
+                <button class="close-modal" onclick="closeAdminDashboard()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div style="margin-bottom: 16px; display:flex; justify-content:space-between; align-items:center;">
+                <p style="color:var(--text-muted); font-size:14px;">Ro'yxatdan o'tgan barcha foydalanuvchilar nazorati:</p>
+                <button onclick="clearAllUsers()" style="background:#ef4444; color:#fff; border:none; padding:6px 12px; border-radius:8px; cursor:pointer; font-size:12px;"><i class="fa-solid fa-trash"></i> Hammini o'chirish</button>
+            </div>
+            <div id="admin-users-list" style="max-height: 400px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script src="<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CERTIFY.UZ — Milliy Sertifikat Simulyatori</title>
+    <link rel="stylesheet" href="styele.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- GLOBAL HEADER -->
+    <header id="main-header" class="glass-header hidden">
+        <div class="header-left">
+            <div class="logo-box" onclick="navigateTo('home')" title="Bosh sahifaga qaytish">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="logo-text">
+                    <span class="brand-main">CERTIFY<span class="accent">.UZ</span></span>
+                    <span class="brand-sub" data-i18n="brandSub">Milliy Sertifikat Tizimi</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="lang-selector">
+                <i class="fa-solid fa-globe"></i>
+                <select id="language-select" onchange="changeLanguage(this.value)">
+                    <option value="uz">O'ZB</option>
+                    <option value="ru">РУС</option>
+                    <option value="en">ENG</option>
+                </select>
+            </div>
+
+            <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" title="Tun / Kun rejimi">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <button class="profile-badge" onclick="openHistoryModal()">
+                <i class="fa-solid fa-user-check"></i>
+                <span id="header-username">Foydalanuvchi</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 1-SAHIFA: RO'YXATDAN O'TISH (Alfraganus University foni bilan) -->
+    <section id="page-register" class="page active">
+        <div class="bg-overlay reg-bg"></div>
+        <div class="reg-container animate-fade-up">
+            <div class="reg-header">
+                <div class="logo-icon large"><i class="fa-solid fa-building-columns"></i></div>
+                <h1>CERTIFY.UZ</h1>
+                <p>Alfraganus University rasmiy ko'magidagi Milliy Sertifikat simulyatori.</p>
+            </div>
+
+            <form id="register-form" onsubmit="handleRegistration(event)">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-user"></i> Ismingiz</label>
+                        <input type="text" id="reg-name" placeholder="Masalan: Sardor" required>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-user-tag"></i> Familiyangiz</label>
+                        <input type="text" id="reg-surname" placeholder="Masalan: Karimov" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-location-dot"></i> Viloyatingiz</label>
+                        <select id="reg-region" required>
+                            <option value="" disabled selected>-- Viloyatni tanlang --</option>
+                            <option value="Toshkent shahri">Toshkent shahri</option>
+                            <option value="Toshkent viloyati">Toshkent viloyati</option>
+                            <option value="Andijon viloyati">Andijon viloyati</option>
+                            <option value="Buxoro viloyati">Buxoro viloyati</option>
+                            <option value="Farg'ona viloyati">Farg'ona viloyati</option>
+                            <option value="Jizzax viloyati">Jizzax viloyati</option>
+                            <option value="Xorazm viloyati">Xorazm viloyati</option>
+                            <option value="Namangan viloyati">Namangan viloyati</option>
+                            <option value="Navoiy viloyati">Navoiy viloyati</option>
+                            <option value="Qashqadaryo viloyati">Qashqadaryo viloyati</option>
+                            <option value="Samarqand viloyati">Samarqand viloyati</option>
+                            <option value="Sirdaryo viloyati">Sirdaryo viloyati</option>
+                            <option value="Surxondaryo viloyati">Surxondaryo viloyati</option>
+                            <option value="Qoraqalpog'iston Respublikasi">Qoraqalpog'iston Respublikasi</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-phone"></i> Telefon raqam</label>
+                        <input type="tel" id="reg-phone" placeholder="+998 90 123 45 67" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fa-solid fa-building-columns"></i> Qaysi universitetga topshirmoqchisiz?</label>
+                    <input type="text" id="reg-university" placeholder="Masalan: Alfraganus University..." required>
+                </div>
+
+                <div class="input-group">
+                    <label><i class="fa-solid fa-book-open-reader"></i> Qaysi fanlarga qiziqasiz?</label>
+                    <div class="checkbox-pills">
+                        <label class="pill"><input type="checkbox" name="interests" value="Ona tili"><span>Ona tili</span></label>
+                        <label class="pill"><input type="checkbox" name="interests" value="Matematika"><span>Matematika</span></label>
+                        <label class="pill"><input type="checkbox" name="interests" value="O'zbekiston tarixi"><span>O'zbekiston tarixi</span></label>
+                        <label class="pill"><input type="checkbox" name="interests" value="Ingliz tili"><span>Ingliz tili</span></label>
+                        <label class="pill"><input type="checkbox" name="interests" value="Rus tili"><span>Rus tili</span></label>
+                        <label class="pill"><input type="checkbox" name="interests" value="Biologiya"><span>Biologiya</span></label>
+                        <label class="pill"><input type="checkbox" name="interests" value="Kimyo"><span>Kimyo</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary full-width">
+                    <span>Platformaga Kirish</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+            
+            <div class="admin-link-box">
+                <button onclick="openAdminLoginModal()">
+                    <i class="fa-solid fa-user-shield"></i> Admin panelga kirish
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2-SAHIFA: ASOSIY BOSH SAHIFA -->
+    <section id="page-home" class="page">
+        <div class="bg-overlay home-bg"></div>
+        
+        <div class="home-layout">
+            <aside class="subjects-sidebar animate-slide-left">
+                <div class="sidebar-title">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3 data-i18n="selectSubject">Imtihon Fanini Tanlang</h3>
+                </div>
+                <p class="sidebar-desc" data-i18n="selectSubjectDesc">O'z darajangizni aniqlash uchun fanni bosing:</p>
+                
+                <div class="subject-list">
+                    <button class="subject-card sub-onatili" onclick="openExamPage('onatili')">
+                        <div class="sub-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                        <div class="sub-info">
+                            <h4 data-i18n="subOnaTili">Ona tili va adabiyot</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+
+                    <button class="subject-card sub-math" onclick="openExamPage('math')">
+                        <div class="sub-icon"><i class="fa-solid fa-square-root-variable"></i></div>
+                        <div class="sub-info">
+                            <h4 data-i18n="subMath">Matematika</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+
+                    <button class="subject-card sub-history" onclick="openExamPage('history')">
+                        <div class="sub-icon"><i class="fa-solid fa-landmark-dome"></i></div>
+                        <div class="sub-info">
+                            <h4 data-i18n="subHistory">O'zbekiston tarixi</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+
+                    <button class="subject-card sub-english" onclick="openExamPage('english')">
+                        <div class="sub-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                        <div class="sub-info">
+                            <h4 data-i18n="subEnglish">Ingliz tili</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+
+                    <button class="subject-card sub-russian" onclick="openExamPage('russian')">
+                        <div class="sub-icon"><i class="fa-solid fa-book-atlas"></i></div>
+                        <div class="sub-info">
+                            <h4 data-i18n="subRussian">Rus tili</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+
+                    <button class="subject-card sub-biology" onclick="openExamPage('biology')">
+                        <div class="sub-icon"><i class="fa-solid fa-dna"></i></div>
+                        <div class="sub-info">
+                            <h4>Biologiya</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+
+                    <button class="subject-card sub-chemistry" onclick="openExamPage('chemistry')">
+                        <div class="sub-icon"><i class="fa-solid fa-flask"></i></div>
+                        <div class="sub-info">
+                            <h4>Kimyo</h4>
+                            <span>15 test + 5 yozma • 35 daqiqa</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </button>
+                </div>
+
+                <div class="mini-history-card" onclick="openHistoryModal()">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <div>
+                        <strong data-i18n="myResults">Mening natijalarim</strong>
+                        <span id="saved-count">0 ta imtihon topshirilgan</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="home-content animate-fade-up">
+                <div class="hero-banner glass-card">
+                    <span class="badge-glow" data-i18n="heroBadge">🚀 2026 Milliy Sertifikat Simulyatori</span>
+                    <h1 data-i18n="heroTitle">Haqiqiy imtihonga kirmasdan turib, o'z darajangizni aniq bilib oling!</h1>
+                    <p data-i18n="heroSubtitle">
+                        O'zbekistonda minglab yoshlar OTMga kirishda imtiyoz beruvchi <strong>Milliy Sertifikat</strong> imtihonlariga tayyorlanishmoqda. Davlat test markazi standartidagi yopiq testlar va yozma topshiriqlar orqali o'z darajangizni sinab ko'ring.
+                    </p>
+                    
+                    <div class="about-grid">
+                        <div class="about-item">
+                            <strong><i class="fa-solid fa-clock"></i> 35 Daqiqalik Rejim</strong>
+                            Istalgan joyda atigi 35 daqiqada diagnostika.
+                        </div>
+                        <div class="about-item">
+                            <strong><i class="fa-solid fa-shield-halved"></i> To'liq Himoya</strong>
+                            Nusxalash va matnni belgilash bloklangan.
+                        </div>
+                        <div class="about-item">
+                            <strong><i class="fa-solid fa-pen-nib"></i> Test + Yozma Tahlil</strong>
+                            5 ta ochiq yozma savol tekshiriladi.
+                        </div>
+                        <div class="about-item">
+                            <strong><i class="fa-solid fa-award"></i> Aniq Sertifikat Darajasi</strong>
+                            A+, A, B+, B, C+, C darajalari aniqlanadi.
+                        </div>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item"><h3>7 ta</h3><p data-i18n="stat1">Fanlar</p></div>
+                        <div class="stat-item"><h3>35m</h3><p>Vaqt</p></div>
+                        <div class="stat-item"><h3>A+ - C</h3><p>Daraja</p></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- 3-SAHIFA: FAN IMTIHONI -->
+    <section id="page-exam" class="page">
+        <div id="exam-bg-layer" class="bg-overlay"></div>
+
+        <div class="exam-wrapper animate-zoom-in">
+            <div class="exam-top-bar glass-card">
+                <button class="btn-back" onclick="confirmExitExam()">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-i18n="exitExam">Chiqish</span>
+                </button>
+                
+                <div class="exam-subject-badge">
+                    <i id="exam-icon" class="fa-solid fa-book"></i>
+                    <h2 id="exam-title">Fan nomi</h2>
+                </div>
+
+                <div class="timer-box" id="timer-box">
+                    <i class="fa-solid fa-hourglass-half fa-spin-pulse"></i>
+                    <span id="exam-timer">35:00</span>
+                </div>
+            </div>
+
+            <div id="exam-intro-box" class="exam-intro glass-card">
+                <div class="intro-icon" id="intro-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h2 id="intro-subject-title">Milliy Sertifikat Imtihoni</h2>
+                <p id="intro-subject-desc">Sinov davlat standartlari asosida tuzilgan.</p>
+                
+                <div class="exam-rules">
+                    <div class="rule-item"><i class="fa-solid fa-list-check"></i> <span><strong>15 ta</strong> yopiq test (har biri 2 ball)</span></div>
+                    <div class="rule-item"><i class="fa-solid fa-pen-nib"></i> <span><strong>5 ta</strong> yozma ochiq savol (har biri 4 ball)</span></div>
+                    <div class="rule-item"><i class="fa-solid fa-clock"></i> <span>Jami vaqt: <strong>35 daqiqa</strong></span></div>
+                    <div class="rule-item"><i class="fa-solid fa-ban" style="color:#ef4444;"></i> <span><strong>Diqqat:</strong> Nusxalash taqiqlangan!</span></div>
                 </div>
 
                 <button class="btn-primary large-btn" onclick="startActualExam()">
@@ -417,5 +829,7 @@
     </div>
 
     <script src="script.js"></script>
+</body>
+</html>"></script>
 </body>
 </html>
