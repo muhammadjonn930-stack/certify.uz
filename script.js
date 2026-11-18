@@ -711,7 +711,7 @@ function openHistoryModal() {
     document.getElementById("user-profile-summary").innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div><strong>${currentUser.name} ${currentUser.surname}</strong> (${currentUser.region})<br>Tel: ${currentUser.phone}</div>
-            <button onclick="editProfileData()" style="background: rgba(239, 68, 68, 0.15); border:1px solid #ef4444; color:#f87171; padding:6px 12px; border-radius:8px; cursor:pointer; font-size:12px;">Tahrirlash</button>
+            <button onclick="editProfileData()" style="background: rgba(239, 68, 68, 0.15); border:1px solid #ef4444; color:#f87171; padding:5px 10px; border-radius:6px; cursor:pointer; font-size:11px;">Tahrirlash</button>
         </div>
     `;
     const history = JSON.parse(localStorage.getItem("certify_history") || "[]");
@@ -770,8 +770,8 @@ function renderAdminUsersList() {
                 <small style="color:var(--text-muted);">Tel: ${u.phone} | OTM: ${u.university} | Fanlar: ${u.interests.join(", ")}</small>
             </div>
             <div style="display:flex; gap:6px;">
-                <button onclick="blockUserModal('${u.phone}')" style="background:#f59e0b; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:11px;" title="Vaqtinchalik bloklash">Blok</button>
-                <button onclick="kickUser('${u.phone}')" style="background:#ef4444; color:#fff; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:11px;" title="Tizimdan chiqarib yuborish">O'chirish</button>
+                <button onclick="blockUserModal('${u.phone}')" style="background:#f59e0b; color:#fff; border:none; padding:5px 8px; border-radius:5px; cursor:pointer; font-size:10px;">Blok</button>
+                <button onclick="kickUser('${u.phone}')" style="background:#ef4444; color:#fff; border:none; padding:5px 8px; border-radius:5px; cursor:pointer; font-size:10px;">O'chirish</button>
             </div>
         </div>
     `).join("");
