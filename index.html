@@ -43,14 +43,14 @@
         </div>
     </header>
 
-    <!-- 1-SAHIFA: RO'YXATDAN O'TISH (Alfraganus University foni bilan) -->
+    <!-- 1-SAHIFA: RO'YXATDAN O'TISH -->
     <section id="page-register" class="page active">
         <div class="bg-overlay reg-bg"></div>
         <div class="reg-container animate-fade-up">
             <div class="reg-header">
                 <div class="logo-icon large"><i class="fa-solid fa-building-columns"></i></div>
                 <h1>CERTIFY.UZ</h1>
-                <p>Alfraganus University telabasi Normatov Muhammadjon Abduvali oglining qilgan prayekti rasmiy ko'magidagi Milliy Sertifikat simulyatori.</p>
+                <p>Alfraganus University talabasi <strong>Normatov Muhammadjon Abduvali o'g'li</strong> tomonidan ishlab chiqilgan Milliy Sertifikat simulyatori.</p>
             </div>
 
             <form id="register-form" onsubmit="handleRegistration(event)">
@@ -210,7 +210,8 @@
                 </div>
             </aside>
 
-            <main class="home-content animate-fade-up">
+            <!-- home-content dagi ortiqcha qotishlar olib tashlandi va silliq qilindi -->
+            <main class="home-content">
                 <div class="hero-banner glass-card">
                     <span class="badge-glow" data-i18n="heroBadge">🚀 2026 Milliy Sertifikat Simulyatori</span>
                     <h1 data-i18n="heroTitle">Haqiqiy imtihonga kirmasdan turib, o'z darajangizni aniq bilib oling!</h1>
@@ -251,7 +252,7 @@
     <section id="page-exam" class="page">
         <div id="exam-bg-layer" class="bg-overlay"></div>
 
-        <div class="exam-wrapper animate-zoom-in">
+        <div class="exam-wrapper">
             <div class="exam-top-bar glass-card">
                 <button class="btn-back" onclick="confirmExitExam()">
                     <i class="fa-solid fa-arrow-left"></i> <span data-i18n="exitExam">Chiqish</span>
@@ -324,7 +325,7 @@
             </div>
 
             <div id="exam-result-area" class="hidden">
-                <div class="result-card glass-card animate-fade-up">
+                <div class="result-card glass-card">
                     <div class="certificate-header">
                         <span class="cert-tag">RASMIY NATIJA</span>
                         <h2 id="res-fullname">Ism Familiya</h2>
@@ -367,7 +368,7 @@
 
     <!-- NATIJALAR TARIXI MODALI -->
     <div id="history-modal" class="modal hidden">
-        <div class="modal-content glass-card animate-zoom-in">
+        <div class="modal-content glass-card">
             <div class="modal-header">
                 <h3><i class="fa-solid fa-award"></i> Saqlangan Natijalar</h3>
                 <button class="close-modal" onclick="closeHistoryModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -379,7 +380,7 @@
 
     <!-- ADMIN LOGIN MODALI -->
     <div id="admin-login-modal" class="modal hidden">
-        <div class="modal-content glass-card animate-zoom-in" style="max-width: 400px;">
+        <div class="modal-content glass-card" style="max-width: 400px;">
             <div class="modal-header">
                 <h3><i class="fa-solid fa-lock"></i> Admin Kirish</h3>
                 <button class="close-modal" onclick="closeAdminLoginModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -400,7 +401,7 @@
 
     <!-- ADMIN PANEL DASHBOARD MODALI -->
     <div id="admin-dashboard-modal" class="modal hidden">
-        <div class="modal-content glass-card animate-zoom-in" style="max-width: 900px;">
+        <div class="modal-content glass-card" style="max-width: 900px;">
             <div class="modal-header">
                 <h3><i class="fa-solid fa-user-shield"></i> Admin Boshqaruv Paneli</h3>
                 <button class="close-modal" onclick="closeAdminDashboard()"><i class="fa-solid fa-xmark"></i></button>
